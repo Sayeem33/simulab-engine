@@ -225,10 +225,7 @@ export default function FreeFallWorkbench() {
               >
                 <RotateCcw size={18} /> Reset
               </button>
-              <ExportBtn 
-                data={dataPoints}
-                experimentName="freefall"
-              />
+              <ExportBtn onExportCSV={exportCSV} />
             </div>
 
             <canvas 
