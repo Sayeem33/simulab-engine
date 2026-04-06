@@ -1,10 +1,5 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
-import * as dotenv from 'dotenv';
-import * as path from 'path';
-
-// Load environment variables from .env.local
-dotenv.config({ path: path.join(__dirname, '..', '.env.local') });
 
 // User Schema
 const userSchema = new mongoose.Schema({

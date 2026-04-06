@@ -60,8 +60,10 @@ export function useSimulation(experimentType: 'physics' | 'chemistry') {
     });
 
     simulationLoopRef.current.start();
-    // NOTE: Do NOT call physicsEngineRef.current.start() 
-    // The SimulationLoop is managing updates via step()
+    
+    if (physicsEngineRef.current) {
+      physicsEngineRef.current.start();
+    }
 
     setState((prev) => ({ ...prev, isRunning: true }));
   }, []);
