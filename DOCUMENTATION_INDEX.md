@@ -18,6 +18,8 @@
 ### **Core Documentation**
 - [**README.md**](./README.md) - Project overview
 - [**QUICK_START.md**](./QUICK_START.md) - Getting started
+- [**ER_DIAGRAM.md**](./ER_DIAGRAM.md) - Database and embedded document relationships
+- [**METHODOLOGY.md**](./METHODOLOGY.md) - Thesis-style project methodology chapter
 
 ---
 

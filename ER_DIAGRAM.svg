@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="920" viewBox="0 0 1360 920" role="img" aria-labelledby="title desc">
+  <title id="title">SimuLab Engine ER Diagram</title>
+  <desc id="desc">Visual ER diagram showing users, experiments, tutorials, achievements, and embedded document structures.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#eef2ff" />
+    </linearGradient>
+    <linearGradient id="userFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eff6ff" />
+      <stop offset="100%" stop-color="#dbeafe" />
+    </linearGradient>
+    <linearGradient id="experimentFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ecfdf5" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+    <linearGradient id="tutorialFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7ed" />
+      <stop offset="100%" stop-color="#ffedd5" />
+    </linearGradient>
+    <linearGradient id="achievementFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fdf2f8" />
+      <stop offset="100%" stop-color="#fbcfe8" />
+    </linearGradient>
+    <linearGradient id="nestedFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1e293b" flood-opacity="0.12" />
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#334155" />
+    </marker>
+    <marker id="arrowDashed" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#64748b" />
+    </marker>
+    <style>
+      .title { font: 700 30px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 14px Arial, sans-serif; fill: #475569; }
+      .entity { filter: url(#shadow); stroke: #334155; stroke-width: 2; rx: 14; ry: 14; }
+      .entityTitle { font: 700 18px Arial, sans-serif; fill: #0f172a; }
+      .attr { font: 12px Arial, sans-serif; fill: #0f172a; }
+      .small { font: 11px Arial, sans-serif; fill: #475569; }
+      .label { font: 600 12px Arial, sans-serif; fill: #334155; }
+      .line { stroke: #334155; stroke-width: 2.4; fill: none; marker-end: url(#arrow); }
+      .lineDashed { stroke: #64748b; stroke-width: 1.9; fill: none; stroke-dasharray: 6 6; marker-end: url(#arrowDashed); }
+      .cardTitle { font: 700 15px Arial, sans-serif; fill: #0f172a; }
+      .mult { font: 700 11px Arial, sans-serif; fill: #0f172a; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1360" height="920" fill="url(#bg)" />
+
+  <text x="680" y="46" text-anchor="middle" class="title">SimuLab Engine ER Diagram</text>
+  <text x="680" y="70" text-anchor="middle" class="subtitle">Compact view of persisted collections and embedded structures</text>
+
+  <!-- USER -->
+  <rect x="40" y="110" width="250" height="222" rx="14" ry="14" class="entity" fill="url(#userFill)" />
+  <text x="165" y="140" text-anchor="middle" class="entityTitle">USER</text>
+  <line x1="56" y1="153" x2="274" y2="153" stroke="#334155" stroke-width="2" />
+  <text x="60" y="176" class="attr">_id PK</text>
+  <text x="60" y="196" class="attr">name</text>
+  <text x="60" y="216" class="attr">email UK</text>
+  <text x="60" y="236" class="attr">password</text>
+  <text x="60" y="256" class="attr">role</text>
+  <text x="60" y="276" class="attr">studentId</text>
+  <text x="60" y="296" class="attr">institution, grade, avatar</text>
+
+  <!-- EXPERIMENT -->
+  <rect x="340" y="110" width="360" height="282" rx="14" ry="14" class="entity" fill="url(#experimentFill)" />
+  <text x="520" y="140" text-anchor="middle" class="entityTitle">EXPERIMENT</text>
+  <line x1="356" y1="153" x2="684" y2="153" stroke="#334155" stroke-width="2" />
+  <text x="360" y="176" class="attr">_id PK</text>
+  <text x="360" y="196" class="attr">userId FK</text>
+  <text x="360" y="216" class="attr">title, description</text>
+  <text x="360" y="236" class="attr">category, experimentType</text>
+  <text x="360" y="256" class="attr">state (mixed)</text>
+  <text x="360" y="276" class="attr">labReport, isTemplate</text>
+  <text x="360" y="296" class="attr">templateCreatedBy FK</text>
+  <text x="360" y="316" class="attr">tags, status, sharedWith FK</text>
+  <text x="360" y="344" class="small">Flexible simulation payload for physics/chemistry</text>
+
+  <!-- TUTORIAL -->
+  <rect x="780" y="110" width="540" height="282" rx="14" ry="14" class="entity" fill="url(#tutorialFill)" />
+  <text x="1050" y="140" text-anchor="middle" class="entityTitle">TUTORIAL</text>
+  <line x1="796" y1="153" x2="1304" y2="153" stroke="#334155" stroke-width="2" />
+  <text x="800" y="176" class="attr">_id PK</text>
+  <text x="800" y="196" class="attr">experimentId UK</text>
+  <text x="800" y="216" class="attr">experimentName, category</text>
+  <text x="800" y="236" class="attr">description, difficulty</text>
+  <text x="800" y="256" class="attr">duration, objectives, prerequisites</text>
+  <text x="800" y="276" class="attr">chapters[], relatedTopics[], references[]</text>
+  <text x="800" y="304" class="small">Single tutorial document per experimentId</text>
+  <text x="800" y="324" class="small">with nested chapter/example/reference arrays</text>
+
+  <!-- ACHIEVEMENT -->
+  <rect x="40" y="690" width="250" height="160" rx="14" ry="14" class="entity" fill="url(#achievementFill)" />
+  <text x="165" y="720" text-anchor="middle" class="entityTitle">ACHIEVEMENT</text>
+  <line x1="56" y1="733" x2="274" y2="733" stroke="#334155" stroke-width="2" />
+  <text x="60" y="756" class="attr">_id PK</text>
+  <text x="60" y="776" class="attr">title</text>
+  <text x="60" y="796" class="attr">description</text>
+  <text x="60" y="816" class="attr">points</text>
+
+  <!-- EXPERIMENT_STATE group -->
+  <rect x="340" y="460" width="360" height="210" rx="14" ry="14" class="entity" fill="url(#nestedFill)" />
+  <text x="520" y="490" text-anchor="middle" class="entityTitle">EXPERIMENT_STATE</text>
+  <line x1="356" y1="503" x2="684" y2="503" stroke="#334155" stroke-width="2" />
+  <text x="360" y="526" class="attr">objects[]</text>
+  <text x="360" y="546" class="attr">chemistry</text>
+  <text x="360" y="566" class="attr">dataPoints[]</text>
+  <text x="360" y="586" class="attr">graphConfig</text>
+  <text x="360" y="614" class="small">Embedded subdocument payload</text>
+
+  <!-- PHYSICS_OBJECT -->
+  <rect x="320" y="700" width="200" height="150" rx="12" ry="12" class="entity" fill="#ffffff" />
+  <text x="420" y="726" text-anchor="middle" class="cardTitle">PHYSICS_OBJECT</text>
+  <line x1="338" y1="738" x2="502" y2="738" stroke="#64748b" stroke-width="1.5" />
+  <text x="342" y="758" class="small">id, type, x, y</text>
+  <text x="342" y="776" class="small">size, mass, velocity</text>
+  <text x="342" y="794" class="small">angle, friction, restitution</text>
+
+  <!-- CHEMISTRY_SETUP -->
+  <rect x="540" y="700" width="200" height="150" rx="12" ry="12" class="entity" fill="#ffffff" />
+  <text x="640" y="726" text-anchor="middle" class="cardTitle">CHEMISTRY_SETUP</text>
+  <line x1="558" y1="738" x2="722" y2="738" stroke="#64748b" stroke-width="1.5" />
+  <text x="562" y="758" class="small">beakers[]</text>
+  <text x="562" y="776" class="small">chemicals[]</text>
+  <text x="562" y="794" class="small">temperature, contents</text>
+
+  <!-- DATA_POINT -->
+  <rect x="760" y="700" width="200" height="150" rx="12" ry="12" class="entity" fill="#ffffff" />
+  <text x="860" y="726" text-anchor="middle" class="cardTitle">DATA_POINT</text>
+  <line x1="778" y1="738" x2="942" y2="738" stroke="#64748b" stroke-width="1.5" />
+  <text x="782" y="758" class="small">time</text>
+  <text x="782" y="776" class="small">x, y, vx, vy, speed</text>
+  <text x="782" y="794" class="small">dynamic experiment metrics</text>
+
+  <!-- TUTORIAL child entities -->
+  <rect x="980" y="460" width="160" height="130" rx="12" ry="12" class="entity" fill="#ffffff" />
+  <text x="1060" y="486" text-anchor="middle" class="cardTitle">CHAPTER</text>
+  <line x1="996" y1="498" x2="1124" y2="498" stroke="#64748b" stroke-width="1.5" />
+  <text x="1000" y="518" class="small">chapterNumber</text>
+  <text x="1000" y="536" class="small">title, content</text>
+  <text x="1000" y="554" class="small">keyPoints, formula</text>
+
+  <rect x="1160" y="460" width="160" height="130" rx="12" ry="12" class="entity" fill="#ffffff" />
+  <text x="1240" y="486" text-anchor="middle" class="cardTitle">EXAMPLE</text>
+  <line x1="1176" y1="498" x2="1304" y2="498" stroke="#64748b" stroke-width="1.5" />
+  <text x="1180" y="518" class="small">title</text>
+  <text x="1180" y="536" class="small">description</text>
+  <text x="1180" y="554" class="small">calculation</text>
+
+  <rect x="980" y="610" width="160" height="110" rx="12" ry="12" class="entity" fill="#ffffff" />
+  <text x="1060" y="636" text-anchor="middle" class="cardTitle">REFERENCE</text>
+  <line x1="996" y1="648" x2="1124" y2="648" stroke="#64748b" stroke-width="1.5" />
+  <text x="1000" y="668" class="small">title</text>
+  <text x="1000" y="686" class="small">url</text>
+
+  <!-- Relationship lines -->
+  <path d="M 290 210 C 310 210, 320 210, 340 210" class="line" />
+  <text x="315" y="195" text-anchor="middle" class="label">creates</text>
+  <text x="304" y="225" class="mult">1</text>
+  <text x="328" y="225" class="mult">N</text>
+
+  <path d="M 700 210 C 730 210, 750 210, 780 210" class="line" />
+  <text x="740" y="195" text-anchor="middle" class="label">documented by</text>
+  <text x="712" y="225" class="mult">1</text>
+  <text x="766" y="225" class="mult">1</text>
+
+  <path d="M 520 392 C 520 420, 520 432, 520 460" class="line" />
+  <text x="542" y="432" class="label">stores</text>
+  <text x="530" y="408" class="mult">1</text>
+  <text x="530" y="454" class="mult">1</text>
+
+  <path d="M 165 332 C 165 480, 165 560, 165 690" class="lineDashed" />
+  <text x="186" y="520" class="label">awarded in progress</text>
+
+  <path d="M 420 670 L 420 700" class="lineDashed" />
+  <path d="M 520 670 L 520 686 L 640 686 L 640 700" class="lineDashed" />
+  <path d="M 620 670 L 620 682 L 860 682 L 860 700" class="lineDashed" />
+
+  <path d="M 1050 392 C 1050 426, 1060 426, 1060 460" class="lineDashed" />
+  <path d="M 1050 392 C 1050 426, 1240 426, 1240 460" class="lineDashed" />
+  <path d="M 980 392 C 940 430, 940 560, 980 610" class="lineDashed" />
+
+  <!-- Footnotes -->
+  <rect x="300" y="860" width="1020" height="40" rx="12" ry="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="810" y="886" text-anchor="middle" class="small">Solid lines: persisted links. Dashed lines: embedded/application-level links. userId is string-based; templateCreatedBy/sharedWith are ObjectId references.</text>
+</svg>
